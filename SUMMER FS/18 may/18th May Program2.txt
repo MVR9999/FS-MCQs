@@ -1,0 +1,56 @@
+You are working at the cash counter at a fun-fair, and you have different types
+of coins available to you in infinite quantities. 
+
+The value of each coin is already given. 
+
+Can you determine the number of ways of making change for a particular number 
+of units using the given types of coins?
+
+The first line contains two space-separated integers describing the respective
+values of n and m, where:
+n is the number of units
+m is the number of coin types
+
+The second line contains m space-separated integers describing the respective
+values of each coin type : 
+the list of distinct coins available in infinite amounts
+
+input = 
+4 3 
+8 3 1 2
+
+Explanation
+For example, if you have 4 types of coins, and the value of each type is given as 
+8,3,1,2 respectively, you can make change for 3 units in three ways: {1,1,1},{1,2} and {3}.
+
+Note - If you are not making any change print 0
+
+input = 
+5 4
+2 4 6 8
+output = 0
+
+back end test cases
+case = 1
+input =
+4 3
+1 2 3
+output = 4
+
+case = 2
+input = 
+10 4
+2 5 3 6
+output = 5
+
+case = 3
+input = 
+5 4
+1 2 3 4
+output = 6
+
+case = 4 
+input =
+5 4
+2 4 6 8
+output = 0

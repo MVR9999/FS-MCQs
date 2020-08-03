@@ -1,0 +1,50 @@
+
+Find the length of largest subarray in which all elements are Autobiographical Numbers
+
+ Given an array arr[] of integers, our task is to find the length of the largest subarray such that all the elements of the sub-array are Autobiographical Number.
+
+    An Autobiographical Number is a number such that the first digit of it counts how many zeroes are there in it, 
+    the second digit counts how many ones are there and so on.
+    For example, 21200 has 2 zero, 1 one, 2 two and 0 three and 0 four. 
+
+the first line of input contains the size of array followed by array elements 
+
+
+    input = 5 
+    21200 1  1303 1210 2020
+    output = 2
+    
+    Explanation:
+    Maximum length of subarray with all numbers as Autobiographical Number is {1210, 2020}.
+
+    input = 6
+    100 200 300 400 1200 500
+    output = 0
+    
+    Explanation:
+    None of them are Autobiographical Number. 
+
+
+
+
+back end test cases
+case = 1
+input = 3
+21200 1210 2020
+output = 3
+
+case = 2
+input = 4
+1 2 3 4
+output = 0
+
+case = 3
+ input = 5 
+21200 1  1303 1210 2020
+output = 2
+
+case = 4
+input =6
+1210 2020 21200 3211000 42101000 521001000
+output = 6
+    

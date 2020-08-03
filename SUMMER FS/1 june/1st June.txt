@@ -1,0 +1,128 @@
+program-1
+
+Given string S consisting of only lowercase English letters. The task is to find if there exists any string which has left shift and right shift both equal to string S. If there exists any string then print Yes, otherwise print No.
+
+input =abcd
+output =No
+
+Explanation:
+There is no string which have left shift and right shift both equal to string “abcd”.
+
+input =papa
+output =Yes
+
+
+Explanation:
+The left shift and right shift both of string “apap” equals to string “papa”.
+
+//backend testcases:
+case = 1
+input =abcd
+output =No
+case = 2
+input =papa
+output =Yes
+case = 3
+input =abccba
+output =No
+case = 4
+input =aaaaaaa
+output =Yes
+
+
+
+program-2
+
+Given an array arr[] and an integer K, the task is to find number of non empty subsequence of length K from the given array arr of size N such that the product of subsequence is a even number.
+
+Example:
+input =4
+2 3 1 7
+3
+output = 3
+
+
+arr[] = [2, 3, 1, 7], K = 3
+Output: 3
+Explanation:
+There are 3 subsequences of length 3 whose product is even number {2, 3, 1}, {2, 3, 7}, {2, 1, 7}.
+
+
+input =2
+2 4
+1
+output =2
+
+arr[] = [2, 4], K = 1
+Output: 2
+Explanation:
+There are 2 subsequence of length 1 whose product is even number {2} {4}.
+
+
+//backend testcases
+case = 1
+input =2
+2 4
+1
+output =2
+case = 2
+input =4
+2 3 1 7
+3
+output = 3
+case = 3
+input =4
+1 2 3 4
+4
+output =1
+case = 4
+input =7
+1 2 3 4 5 6 7
+2
+output =15
+
+
+
+program-3
+
+Given an array and a positive integer k, find the first negative integer for each window(contiguous subarray) of size k. If a window does not contain a negative integer, then print 0 for that window.
+
+Examples:
+
+input =5
+-8 2 3 -6 10
+2
+output =-8 0 -6 -6
+
+First negative integer for each window of size k(k=2)
+{-8, 2} = -8
+{2, 3} = 0 (does not contain a negative integer)
+{3, -6} = -6
+{-6, 10} = -6
+
+input =8
+12 -1 -7 8 -15 30 16 28
+3
+output =-1 -1 -7 -15 -15 0
+
+//backend testcases:
+case = 1
+input =8
+12 -1 -7 8 -15 30 16 28
+3
+output =-1 -1 -7 -15 -15 0
+case = 2
+input =5
+-8 2 3 -6 10
+2
+output =-8 0 -6 -6
+case = 3
+input =4
+-1 -2 -3 -4
+1
+output =-1 -2 -3 -4
+case = 4
+input =4
+-1 -2 -3 -4
+2
+output =-1 -2 -3

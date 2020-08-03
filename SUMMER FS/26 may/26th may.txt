@@ -1,0 +1,127 @@
+A decimal number can be converted to its Hexspeak representation by first converting it to an uppercase hexadecimal string, then replacing all occurrences of the digit 0 with the letter O, and the digit 1 with the letter I.  Such a representation is valid if and only if it consists only of the letters in the set {"A", "B", "C", "D", "E", "F", "I", "O"}.
+
+Given a string num representing a decimal integer N, return the Hexspeak representation of N if it is valid, otherwise return "ERROR".
+
+ 
+
+input = 257
+output = IOI
+
+Explanation:  257 is 101 in hexadecimal.
+
+input =3
+output =ERROR
+
+
+//backend testcases:
+case = 1
+input =257
+output =IOI
+case = 2
+input =3
+output =ERROR
+case = 3
+input =16
+output =IO
+case = 4
+input =256
+output =IOO
+
+
+
+
+program-2
+
+Given an initial array arr, every day you produce a new array using the array of the previous day.
+
+On the i-th day, you do the following operations on the array of day i-1 to produce the array of day i:
+
+If an element is smaller than both its left neighbor and its right neighbor, then this element is incremented.
+If an element is bigger than both its left neighbor and its right neighbor, then this element is decremented.
+The first and last elements never change.
+
+
+After some days, the array does not change. Return that final array.
+
+input =4
+6 2 3 4
+output =6 3 3 4
+
+Explanation: 
+On the first day, the array is changed from [6,2,3,4] to [6,3,3,4].
+No more operations can be done to this array.
+
+
+input =6
+1 6 3 4 3 5
+output =1 4 4 4 4 5
+
+Explanation: 
+On the first day, the array is changed from [1,6,3,4,3,5] to [1,5,4,3,4,5].
+On the second day, the array is changed from [1,5,4,3,4,5] to [1,4,4,4,4,5].
+No more operations can be done to this array.
+ 
+
+
+//backend testcases:
+case = 1
+input =4
+6 2 3 4
+output =6 3 3 4
+case = 2
+input =6
+1 6 3 4 3 5
+output =1 4 4 4 4 5
+case = 3
+input =3
+1 2 1
+output =1 1 1
+case = 4
+input =6
+1 2 2 2 2 1
+output =1 2 2 2 2 1
+
+
+program-3
+
+In some array arr, the values were in arithmetic progression: the values arr[i+1] - arr[i] are all equal for every 0 <= i < arr.length - 1.
+
+Then, a value from arr was removed that was not the first or last value in the array.
+
+Return the removed value.
+
+ 
+input =4
+5 7 11 13
+output =9
+Explanation: The previous array was [5,7,9,11,13].
+
+
+input =3
+15 13 12
+output =14
+
+Explanation: The previous array was [15,14,13,12].
+ 
+//backend testcases:
+case =1
+input =4
+5 7 11 13
+output =9
+case = 2
+input =3
+15 13 12
+output =14
+case = 3
+input = 5
+1 2 3 4 6
+output =5
+case = 4
+input =5
+10 20 40 50 60
+output =30
+case = 5
+input =4
+7 14 21 35
+output =28
+

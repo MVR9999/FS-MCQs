@@ -1,0 +1,58 @@
+Given an input stream of n integers, find the kth largest element for each element in the stream.
+
+Input:
+ The first line of each test case contains two space separated integers k and n . 
+ Then in the next line are n space separated values of the array.
+
+Output:
+print the space separated values denoting the kth largest element at each insertion,
+if the kth largest element at a particular insertion in the stream doesn't exist print -1.
+
+
+input =
+4 6
+1 2 3 4 5 6
+output = -1 -1 -1 1 2 3
+
+Explanation:
+Testcase1:
+k = 4
+For 1, the 4th largest element doesn't exist so we print -1.
+For 2, the 4th largest element doesn't exist so we print -1.
+For 3, the 4th largest element doesn't exist so we print -1.
+For 4, the 4th largest element is 1 {1, 2, 3, 4}
+For 5, the 4th largest element is 2 {2, 3, 4 ,5}
+for 6, the 4th largest element is 3 {3, 4, 5}
+
+
+
+input = 
+1 2
+3 4
+output = 3 4 
+
+
+back end test cases
+
+case = 1
+input =
+4 6
+1 2 3 4 5 6
+output = -1 -1 -1 1 2 3
+
+case = 2
+input = 
+1 2
+3 4
+output = 3 4 
+
+case = 3
+input = 4 4
+1 2 3 4
+output = -1 -1 -1 1
+
+case = 4
+input = 3 6
+1 2 4 5 8 9
+output = -1 -1 1 2 4 5
+

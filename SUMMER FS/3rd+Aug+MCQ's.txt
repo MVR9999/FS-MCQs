@@ -1,0 +1,496 @@
+1) In Java which of the following statements are true 
+
+A)Each thread gets its own stack
+B)Threads share the same stack
+C)Each process gets a stack
+D)All allocation happens on the heap, the stack is never used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ans- A
+
+2) Which of these statements are correct ?
+
+1) Static variables, are initialized when class is loaded
+2) Static variables in a class are initialized before any object of that class can be created 
+3) Static variables in a class are initialized before any static method of the class runs
+4) Static variables are initialized every time an instance of a class is created
+5) static variables should always be marked final
+
+
+A) Statements 1,2 and 3 are correct
+B) Statements 2,3 and 4 are correct
+C) Statements 3,4 and 5 are correct
+D) All Statements are correct
+
+
+
+
+
+
+
+
+
+
+
+Ans- A 
+
+3) State the output of this code below when compiled and runned without any arguments
+
+class myClass {
+public void main(String [] args) 
+{
+System.out.println("Hello "+ args[0]);
+}
+}
+
+a) Hello.c
+b) Hello
+c) Hello world
+D) Runtime error
+
+
+
+
+
+
+Ans- D
+
+4) Which of the following statements are incorrect ?
+
+Select one of the answers below :
+
+A)public members of class can be accessed by any code in the program
+B)private members of class can only be accessed by other members of the class
+C)private members of class can be inherited by a sub class and become protected members in sub class 
+D)protected members of a class can be inherited by a sub class and become private members of the sub class 
+
+
+
+
+
+Ans- C
+
+5)
+class MyClass {
+public static void main(String [] args)
+{
+   int a=5;
+   int b=10;
+   first: {
+	second: {
+		third: {
+		if(a==b>>1)
+		    break second;
+		    }
+		   System.out.println(a);
+		   }
+		   System.out.println(b);
+		   }
+}
+}
+
+
+A)5 10
+B)10 5
+C)5
+D)10
+
+
+
+
+
+
+
+Ans-D
+
+
+6)
+class A
+{
+int i;
+public void display() {
+	System.out.println(i);
+	}
+}
+
+class B extends A {
+	int j;
+	public void display() {
+	System.out.println(j);
+	}
+}
+
+class MyClass {
+public static void main(String [] args ) {
+	B obj2 = new B();
+	obj2.i = 1;
+	obj2.j = 2;
+	A r;
+	r=obj2;
+	r.display();
+}
+}
+
+
+A)1
+B)2
+C)Runtime error
+D)Compilation error
+
+
+
+
+Ans- B
+
+7) which of the following java constructs help in achieving thread safety ?
+
+A)Process
+B)try/catch
+C)Thread
+D)Runnable
+E)synchronized
+F)none of these
+
+
+
+
+
+Ans- E
+
+8) 
+State the output of this program
+
+class Base {
+	public void method () {
+	System.out.println("Base");
+	}
+	}
+
+public class MyClass extends Base {
+	protected void method() {
+	   System.out.println("My Class");
+	}
+	public static void main(String [] args) 
+	{
+	MyClass obj = new MyClass();
+	obj.method();
+	}
+	}
+
+A)Base
+B)MyClass
+C)BaseMyClass
+D)Compilation error
+
+
+
+
+Ans-D
+
+9) when is the finalize() method called ?
+
+A)when on object is created 
+B)when an object is about to get garbage collected
+C)as soon as all object references are released
+D)when any variable holding a reference to the object goes out of scope
+
+
+
+
+Ans- B
+
+10) How does java implement polymorphism ?
+
+A)method overloading
+B)method overriding
+C)method hiding
+D)none of these
+
+
+
+
+
+
+
+Ans- B
+
+11)
+In Java, objects  created on the heap from one thread can be accessed by another thread
+
+A)always
+B)never
+C)sometimes
+D)only from the main thread
+
+
+
+
+
+
+
+Ans-D 
+
+12)
+class Dog{
+String name;
+
+Dog(String str)
+{
+name = str;
+}
+void setName(String name)
+{
+this.name = name;
+}
+String getName()
+{
+return name;
+}
+}
+
+public class MyClass {
+public static void main(String [] args) 
+{
+Dog myDog = new Dog("Rover");
+foo(myDog);
+System.out.println(myDog.getName());
+
+    
+}
+public static void foo(Dog someDog)
+{
+someDog.setName("Max");
+someDog = new Dog("Fifi");
+someDog.setName("Rowlf");
+}
+
+}
+
+ What will be the output of the above code
+
+A) Rover
+B) Max
+C) Fifi
+D) Rowlf
+
+
+
+
+
+Ans- B
+
+13)
+ class MyClass {
+  public static void main(String [] args) 
+  {
+  try 
+  {
+      int a=0;
+      int b = 5;
+      int c = b/a;
+      System.out.print("Hello");
+  }
+  catch(Exception e) {
+	System.out.print("World");
+  }
+  finally {
+	System.out.print("World");
+  }
+  }
+  }
+
+A)Hello
+B)World
+C)HelloWorld
+D)WorldWorld
+
+
+
+
+Ans- D
+
+14)
+class myClass {
+ public static void main(String [] args) 
+ {
+     char c1 = 'D';
+     char c2 = 84;
+     c2++;
+     c1++;
+     System.out.println(c1+ " "+c2);
+ }
+ }
+
+A)E U
+B)E E
+C)U E
+D)Compilation Error
+
+
+
+
+Ans- A
+
+15)
+ class MyClass 
+ {
+   public static void main(String [] args) 
+   {
+    try {
+	int a=0;
+	int b=5;
+	int c=a/b;
+	System.out.print("Hello");
+	}
+	catch(Exception e)
+	{
+	     System.out.print("World");
+	}
+	}
+ }
+
+A) Hello
+B) World
+C) HelloWorld
+D) Compilation error
+
+
+
+
+
+Ans- A
+
+16)
+
+ class A{
+ int i;
+ int j;
+ A() {
+    i=1;
+    j=2;
+    }
+    }
+
+    class MyClass {
+    public static void main(String [] args) {
+       A obj1 = new A();
+       A obj2= new A();
+       System.out.println(obj1.equals(obj2));
+    }
+    }
+
+
+A)false
+B)true
+C)compilation error
+D)run time error
+
+
+
+Ans-A
+
+17)
+class MyClass {
+  public static void main(String [] args) 
+  {
+      int x=9;
+      if(x==9) {
+         int x=8;
+	 System.out.println(x);
+	 }
+	 }
+	 }
+
+
+A)9
+B)8
+C)Compilation error
+D)none of these
+
+
+
+
+Ans- C
+
+18)
+ The condition controlling the loop is initially false. 
+ Which loop will allow its body to execute ?
+
+
+ A)do-while
+ B)for
+ C)while
+ D)none mentioned
+
+
+
+Ans- A
+
+19)
+ final class A
+ {
+ int i;
+}
+
+class B extends A {
+int j;
+void display() {
+System.out.println(j + " " +i);
+}
+}
+
+class MyClass {
+public static void main(String [] args) 
+{
+	B Obj = new B();
+	obj.display();
+}
+}
+
+
+A)2  2
+B)3 3
+C)Compilation error
+D)run time error
+
+
+
+
+Ans- C
+
+20) In Java multiple inheritance can be achieved by 
+
+A)extending 2 or more classes
+B)extending one class and implementing 1 or more interfaces
+C)cannot be achieved
+D)using the multiple keyword when extending classes
+
+
+
+
+
+Ans- C
+

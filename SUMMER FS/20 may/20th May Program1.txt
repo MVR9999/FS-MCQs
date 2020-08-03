@@ -1,0 +1,42 @@
+Given two strings, 
+check whether these strings are meta strings or not. 
+Meta strings are the strings which can be made equal by exactly one swap in any of the strings. 
+
+Equal string are not considered here as Meta strings.
+
+if the strings are meta strings print Yes else print No 
+
+Examples:
+
+Input = goods
+doogs
+Output = Yes
+
+By just swapping 'd' and 'g' in any of string, 
+both will become same.
+
+Input  = rsting
+string
+Output = No
+
+back end test cases
+
+case = 1
+input = Converse
+Conserve
+output = Yes
+
+case = 2
+input = rsting
+string
+output = No
+
+case = 3
+input = abca
+abda
+output = No
+
+case = 4
+input = hello
+holle
+output = Yes
