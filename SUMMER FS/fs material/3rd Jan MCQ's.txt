@@ -1,0 +1,279 @@
+
+1) Suppose we have a class named Rabbit. Which of the following statements are true?
+(Choose all that apply)
+
+1: public class Rabbit {
+2: public static void main(String[] args) {
+3: Rabbit one = new Rabbit();
+4: Rabbit two = new Rabbit();
+5: Rabbit three = one;
+6: one = null;
+7: Rabbit four = one;
+8: three = null;
+9: two = null;
+10: two = new Rabbit();
+11: System.gc();
+12: } }
+
+A. The Rabbit object from line 3 is first eligible for garbage collection immediately following line 6.
+B. The Rabbit object from line 3 is first eligible for garbage collection immediately following line 8.
+C. The Rabbit object from line 3 is first eligible for garbage collection immediately following line 12.
+D. The Rabbit object from line 4 is first eligible for garbage collection immediately following line 9.
+E. The Rabbit object from line 4 is first eligible for garbage collection immediately following line 11.
+F. The Rabbit object from line 4 is first eligible for garbage collection immediately following line 12.
+
+
+Ans- B,D
+
+
+2) What is true about the following code? (Choose all that apply)
+public class Bear {
+protected void finalize() {
+System.out.println("Roar!");
+}
+public static void main(String[] args) {
+Bear bear = new Bear();
+bear = null;
+System.gc();
+} }
+
+A. finalize() is guaranteed to be called.
+B. finalize() might or might not be called
+C. finalize() is guaranteed not to be called.
+D. Garbage collection is guaranteed to run.
+E. Garbage collection might or might not run.
+F. Garbage collection is guaranteed not to run.
+G. The code does not compile.
+
+
+Ans- B,E
+
+
+
+3) Given:
+class CardBoard {
+Short story = 200;
+CardBoard go(CardBoard cb) {
+cb = null;
+return cb;
+}
+public static void main(String[] args) {
+CardBoard c1 = new CardBoard();
+CardBoard c2 = new CardBoard();
+CardBoard c3 = c1.go(c2);
+c1 = null;
+// do Stuff
+} }
+When // doStuff is reached, how many objects are eligible for GC?
+A. 0
+B. 1
+C. 2
+D. Compilation fails
+E. It is not possible to know
+F. An exception is thrown at runtime
+
+
+Answer:
+ C is correct. 
+ 
+
+ Explanation
+ Only one CardBoard object (c1) is eligible, but it has an associated Short
+wrapper object that is also eligible.
+
+
+
+
+4)
+
+Given:
+3. class Dozens {
+4. int[] dz = {1,2,3,4,5,6,7,8,9,10,11,12};
+5. }
+6. public class Eggs {
+7. public static void main(String[] args) {
+8. Dozens [] da = new Dozens[3];
+9. da[0] = new Dozens();
+10. Dozens d = new Dozens();
+11. da[1] = d;
+12. d = null;
+13. da[1] = null;
+14. // do stuff
+15. }
+16. }
+Which two are true about the objects created within main(), and eligible for garbage collection
+when line 14 is reached?
+A. Three objects were created
+B. Four objects were created
+C. Five objects were created
+D. Zero objects are eligible for GC
+E. One object is eligible for GC
+F. Two objects are eligible for GC
+G. Three objects are eligible for GC
+
+
+
+
+Answer:
+C and F are correct. 
+
+
+ Explanation
+da refers to an object of type "Dozens array," and each Dozens object
+that is created comes with its own "int array" object. When line 14 is reached, only the
+second Dozens object (and its "int array" object) are not reachable.
+
+
+
+5)
+
+Given:
+3. class Beta { }
+4. class Alpha {
+5. static Beta b1;
+6. Beta b2;
+7. }
+8. public class Tester {
+9. public static void main(String[] args) {
+10. Beta b1 = new Beta(); Beta b2 = new Beta();
+11. Alpha a1 = new Alpha(); Alpha a2 = new Alpha();
+12. a1.b1 = b1;
+13. a1.b2 = b1;
+14. a2.b2 = b2;
+15. a1 = null; b1 = null; b2 = null;
+16. // do stuff
+17. }
+18. }
+When line 16 is reached, how many objects will be eligible for garbage collection?
+A. 0
+B. 1
+C. 2
+D. 3
+E. 4
+F. 5
+
+
+Ans- B is correct. 
+
+
+ Explanation
+It should be clear that there is still a reference to the object referred to by
+a2, and that there is still a reference to the object referred to by a2.b2. What might be
+less clear is that you can still access the other Beta object through the static variable
+a2.b1—because it's static.
+
+
+
+6)void start() {  
+    A a = new A(); 
+    B b = new B(); 
+    a.s(b);  
+    b = null; /* Line 5 */
+    a = null;  /* Line 6 */
+    System.out.println("start completed"); /* Line 7 */
+} 
+
+When is the B object, created in line 3, eligible for garbage collection?
+
+A. 	after line 5
+B. 	after line 6
+C. 	after line 7
+D. 	There is no way to be absolutely certain.
+
+Answer: Option D
+
+
+
+7)class Test 
+{  
+    private Demo d; 
+    void start() 
+    {  
+        d = new Demo(); 
+        this.takeDemo(d); /* Line 7 */
+    } /* Line 8 */
+    void takeDemo(Demo demo) 
+    { 
+        demo = null;  
+        demo = new Demo(); 
+    } 
+}
+
+When is the Demo object eligible for garbage collection?
+
+A. 	After line 7
+B. 	After line 8
+C. 	After the start() method completes
+D. 	When the instance running this code is made eligible for garbage collection.
+
+
+
+Answer: Option D
+
+
+
+
+8)public class X 
+{
+    public static void main(String [] args) 
+    {
+        X x = new X();
+        X x2 = m1(x); /* Line 6 */
+        X x4 = new X();
+        x2 = x4; /* Line 8 */
+        doComplexStuff();
+    }
+    static X m1(X mx) 
+    {
+        mx = new X();
+        return mx;
+    }
+}
+
+After line 8 runs. how many objects are eligible for garbage collection?
+
+A. 	0  
+B. 	1
+C. 	2
+D. 	3
+
+Answer: Option B
+
+
+
+9)Which of the following are true? (Choose all that apply)
+
+A. An instance variable of type boolean defaults to false.
+B. An instance variable of type boolean defaults to true.
+C. An instance variable of type boolean defaults to null.
+D. An instance variable of type int defaults to 0.
+E. An instance variable of type int defaults to 0.0.
+F. An instance variable of type int defaults to null.
+G. None of the above.
+
+
+Ans-A,D
+
+
+10)
+
+Which of the following are true? (Choose all that apply)
+public class Bunny {
+public static void main(String[] args) {
+Bunny bun = new Bunny();
+} }
+A. Bunny is a class.
+B. bun is a class.
+C. main is a class.
+D. Bunny is a reference to an object.
+E. bun is a reference to an object.
+F. main is a reference to an object.
+G. None of the above.
+
+
+Ans-A,E
+
+
+
+
+

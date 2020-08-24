@@ -1,0 +1,380 @@
+1. Which of the following are valid Java identifiers? (Choose all that apply)
+A. A$B
+B. _helloWorld
+C. true
+D. java.lang
+E. Public
+F. 1980_s
+
+
+Ans- A,B,E
+
+
+
+2. Which of the following are true? (Choose all that apply)
+
+4: short numPets = 5;
+5: int numGrains = 5.6;
+6: String name = "Scruffy";
+7: numPets.length();
+8: numGrains.length();
+9: name.length();
+A. Line 4 generates a compiler error.
+B. Line 5 generates a compiler error.
+C. Line 6 generates a compiler error.
+D. Line 7 generates a compiler error.
+E. Line 8 generates a compiler error.
+F. Line 9 generates a compiler error.
+G. The code compiles as is.
+
+
+
+Ans- B,D,E
+
+
+
+3. Given the following classes, which of the following can independently replace INSERT
+IMPORTS HERE to make the code compile? (Choose all that apply)
+package aquarium;
+public class Tank { }
+package aquarium.jellies;
+public class Jelly { }
+package visitor;
+INSERT IMPORTS HERE
+public class AquariumVisitor {
+public void admire(Jelly jelly) { } }
+A. import aquarium.*;
+B. import aquarium.*.Jelly;
+C. import aquarium.jellies.Jelly;
+D. import aquarium.jellies.*;
+E. import aquarium.jellies.Jelly.*;
+F. None of these can make the code compile.
+
+
+
+Ans-C,D
+
+
+
+4. Given the following classes, which of the following snippets can be inserted in place of
+INSERT IMPORTS HERE and have the code compile? (Choose all that apply)
+package aquarium;
+public class Water {
+boolean salty = false;
+}
+package aquarium.jellies;
+public class Water {
+boolean salty = true;
+}
+package employee;
+INSERT IMPORTS HERE
+public class WaterFiller {
+Water water;
+}
+A. import aquarium.*;
+B. import aquarium.Water;
+import aquarium.jellies.*;
+C. import aquarium.*;
+import aquarium.jellies.Water;
+D. import aquarium.*;
+import aquarium.jellies.*;
+E. import aquarium.Water;
+import aquarium.jellies.Water;
+F. None of these imports can make the code compile.
+
+
+Ans-A,B,C
+
+
+
+5. Which of the following legally fill in the blank so you can run the main() method from the
+command line? (Choose all that apply)
+public static void main( )
+A. String[] _names
+B. String[] 123
+C. String abc[]
+D. String _Names[]
+E. String... $n
+F. String names
+G. None of the above.
+
+
+
+Ans-A,C,D,E
+
+
+6. Which of the following are true? (Choose all that apply)
+A. An instance variable of type double defaults to null.
+B. An instance variable of type int defaults to null.
+C. An instance variable of type String defaults to null.
+D. An instance variable of type double defaults to 0.0.
+E. An instance variable of type int defaults to 0.0.
+F. An instance variable of type String defaults to 0.0.
+G. None of the above.
+
+
+
+Ans-C,D
+
+
+
+7. Which of the following lines of code compile? (Choose all that apply)
+A. int i1 = 1_234;
+B. double d1 = 1_234_.0;
+C. double d2 = 1_234._0;
+D. double d3 = 1_234.0_;
+E. double d4 = 1_234.0;
+F. None of the above.
+
+
+Ans- A,E
+
+
+
+8. What does the following code output?
+1: public class Salmon {
+2: int count;
+3: public void Salmon() {
+4: count = 4;
+5: }
+6: public static void main(String[] args) {
+7: Salmon s = new Salmon();
+8: System.out.println(s.count);
+9: } }
+A. 0
+B. 4
+C. Compilation fails on line 3.
+D. Compilation fails on line 4.
+E. Compilation fails on line 7.
+F. Compilation fails on line 8.
+
+
+
+Ans-A
+
+
+
+9. Which of the following are true? (Choose all that apply)
+A. javac compiles a .class file into a .java file.
+B. javac compiles a .java file into a .bytecode file.
+C. javac compiles a .java file into a .class file.
+D. Java takes the name of the class as a parameter.
+E. Java takes the name of the .bytecode file as a parameter.
+F. Java takes the name of the .class file as a parameter.
+
+
+
+Ans-C,D
+
+
+
+10. Given the following class, which of the following lines of code can replace INSERT CODE
+HERE to make the code compile? (Choose all that apply)
+public class Price {
+public void admission() {
+INSERT CODE HERE
+System.out.println(amount);
+} }
+A. int amount = 9L;
+B. int amount = 0b101;
+C. int amount = 0xE;
+D. double amount = 0xE;
+E. double amount = 1_2_.0_0;
+F. int amount = 1_2_;
+G. None of the above.
+
+
+
+
+Ans- B,C,D
+
+
+
+11. What data type (or types) will allow the following code snippet to compile? (Choose all that
+apply)
+byte x = 5;
+byte y = 10;
+_____ z = x + y;
+A. int
+B. long
+C. boolean
+D. double
+E. short
+F. byte
+
+
+
+Ans-A,B,D
+
+
+
+12. What change would allow the following code snippet to compile? (Choose all that apply)
+
+3: long x = 10;
+4: int y = 2 * x;
+A. No change; it compiles as is.
+B. Cast x on line 4 to int.
+C. Change the data type of x on line 3 to short.
+D. Cast 2 * x on line 4 to int.
+E. Change the data type of y on line 4 to short.
+F. Change the data type of y on line 4 to long.
+
+
+
+Ans-B,C,D,F
+
+
+
+13. What is the output of the following code snippet?
+
+3: int x = 4;
+4: long y = x * 4 - x++;
+5: if(y<10) System.out.println("Too Low");
+6: else System.out.println("Just right");
+7: else System.out.println("Too High");
+A. Too Low
+B. Just Right
+C. Too High
+D. Compiles but throws a NullPointerException.
+E. The code will not compile because of line 6.
+F. The code will not compile because of line 7.
+
+
+
+Ans-F
+
+14. What is the output of the following code snippet?
+
+3: boolean x = true, z = true;
+4: int y = 20;
+5: x = (y != 10) ^ (z=false);
+6: System.out.println(x+", "+y+", "+z);
+A. true, 10, true
+B. true, 20, false
+C. false, 20, true
+D. false, 20, false
+E. false, 20, true
+F. The code will not compile because of line 5.
+
+
+Ans-B
+
+
+
+
+15. What is the output of the following code?
+
+3: byte a = 40, b = 50;
+4: byte sum = (byte) a + b;
+5: System.out.println(sum);
+
+A. 40
+B. 50
+C. 90
+D. The code will not compile because of line 4.
+E. An undefined value.
+
+
+
+Ans-D
+
+
+
+16. What is the output of the following code snippet?
+
+3: int x = 0;
+4: String s = null;
+5: if(x == s) System.out.println("Success");
+6: else System.out.println("Failure");
+A. Success
+B. Failure
+C. The code will not compile because of line 4.
+D. The code will not compile because of line 5.
+
+
+
+Ans-D
+
+
+
+
+17. What is the output of the following code snippet?
+
+3: int c = 7;
+4: int result = 4;
+5: result += ++c;
+6: System.out.println(result);
+A. 8
+B. 11
+C. 12
+D. 15
+E. 16
+F. The code will not compile because of line 5.
+
+
+
+Ans-C
+
+
+
+
+
+18. What is the output of the following code snippet?
+
+3: do {
+4: int y = 1;
+5: System.out.print(y++ + " ");
+6: } while(y <= 10);
+A. 1 2 3 4 5 6 7 8 9
+B. 1 2 3 4 5 6 7 8 9 10
+C. 1 2 3 4 5 6 7 8 9 10 11
+D. The code will not compile because of line 6.
+E. The code contains an infinite loop and does not terminate.
+
+
+
+Ans-D
+
+
+
+
+
+19. What is the output of the following code snippet?
+
+3: int count = 0;
+4: ROW_LOOP: for(int row = 1; row <=3; row++)
+5: for(int col = 1; col <=2 ; col++) {
+6: if(row * col % 2 == 0) continue ROW_LOOP;
+7: count++;
+8: }
+9: System.out.println(count);
+A. 1
+B. 2
+C. 3
+D. 4
+E. 6
+F. The code will not compile because of line 6.
+
+
+
+Ans-B
+
+20. What is the result of the following code snippet?
+3: final char a = 'A', d = 'D';
+4: char grade = 'B';
+5: switch(grade) {
+6: case a:
+7: case 'B': System.out.print("great");
+8: case 'C': System.out.print("good"); break;
+9: case d:
+10: case 'F': System.out.print("not good");
+11: }
+A. great
+B. greatgood
+C. The code will not compile because of line 3.
+D. The code will not compile because of line 6.
+E. The code will not compile because of lines 6 and 9.
+
+
+
+Ans-B
