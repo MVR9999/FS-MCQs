@@ -1,0 +1,443 @@
+1)
+#include<stdio.h>
+int main()
+{
+   struct bits 
+   {
+   float f:2;
+   }bit;
+   printf(" %d ", sizeof(bit));
+}
+
+A) 2
+B) 4
+C) 32
+D) Runtime error
+E) Compilation fails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ans- E
+
+
+Bit Fields can be set only for a signed int or an unsigned int. here, we are 
+trying to set bit fields for a float, hence the compilation error
+
+2)
+How will you use the macros defined in the following program to test whether a 
+given character is an alphabet(A-Z/a-z) or not ?
+
+#include<stdio.h>
+#define LE <=
+#define GE >=
+#define AND &&
+#define OR ||
+int main()
+{
+     char ch='D';
+     //write your code here
+     return 0;
+}
+
+A)
+
+if((ch GE 65 AND ch LE 90) OR (ch GE 97 AND ch LE 122))
+   printf("Alphabet");
+ else
+   printf("Not Alphabet");
+
+
+B)
+if((ch GE 65 AND ch LE 90) AND (ch GE 97 AND ch LE 122))
+   printf("Alphabet");
+ else
+   printf("Not Alphabet");
+
+ 
+ C) This cannot de done with the MACRO given it results in a runtime error
+
+ D) This cannot be done with the MACRO given it results in a compilation error
+
+
+
+Ans- A
+
+3)
+#include<stdio.h>
+float fun(float);
+int main()
+{
+float k = 0.5;
+  fun(k=fun(fun(k)));
+  printf(" %f ", k);
+}
+
+float fun(float i)
+{
+   return i*i;
+}
+
+A) 0.062500
+B) 6.25
+C) Garbage Value
+D) Compilation Error
+
+
+
+
+Ans- A
+
+4)
+#include<stdio.h>
+int main()
+{
+        int x=1,y=1;
+	for(;y; y=x++<=5, printf("%d %d\n",x,y));
+return 0;	   
+}
+
+
+A) 
+2 1                                                                                                                                    
+3 1                                                                                                                                    
+4 1                                                                                                                                    
+5 1                                                                                                                                    
+6 1                                                                                                                                    
+
+
+B)
+2 1                                                                                                                                    
+3 1                                                                                                                                    
+4 1                                                                                                                                    
+5 1                                                                                                                                    
+6 1                                                                                                                                    
+7 0  
+
+
+C) 
+
+2 1                                                                                                                                    
+3 1                                                                                                                                    
+4 1                                                                                                                                    
+5 1                                                                                                                                    
+
+
+D) 
+2 1                                                                                                                                    
+3 1                                                                                                                                    
+4 1                                                                                                                                    
+4 1                                                                                                                                    
+
+
+E) Compilation fails
+
+
+Ans- B
+
+5)
+
+#include<stdio.h>
+int main()
+{
+    char str[]="goodboy";
+    char *s=str;
+    printf(" %s ",+s+4);
+
+}
+
+A) Compilation fails
+B) Junk value
+C) Runtime error
+D) oy
+E) boy
+
+
+
+Ans- D
+
+6)
+test.c
+Assume the following code is saved as "test.c" and 
+what is the output if it is executed from the command-line as shown below ?
+
+test 1 2 3
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(int argc,char *argv[])
+{
+       int i,j=0;
+       for(i=0;i<argc;i++)
+         j=j+atoi(argv[i]);
+	 printf(" %d ",j);
+}
+
+A) 123
+B) 6
+C) Compilation error
+D) "123"
+
+
+
+Ans- B
+
+when atoi() tries to convert argv[0] to a number it cannot do so(argv[0] being 
+a file name) and hence returns a zero.
+
+7)
+which of the following statement correctly allocates memory dynamically for a 2D array in the program given below ?
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+     int *p,i,j;
+     // add statement here 
+     for(i=0;i<3;i++)
+     {
+       for(j=0;j<4;j++) 
+       {
+          p[i*4+j]=i;
+     printf(" %d ", p[i*4+j]);
+}
+}
+printf("\n");
+return 0;
+}
+
+
+A) p=(int *)malloc(3*4*sizeof(int));
+B) p=(int *)malloc(3*sizeof(int));
+C) p=malloc(3*4*sizeof(int));
+D) p=(int*)malloc(3*4);
+
+
+Ans- A
+
+8)
+What gets printed when the following code is compiled and run with the following command - 
+java test 2 
+
+public class test {
+       public static void main(String [] args ) {
+
+Integer intObj = Integer.valueOf(args[args.length-1]);
+int i=intObj.intValue();
+if(args.length > 1)
+    System.out.println(i);
+ if(args.length > 0) 
+    System.out.println(i-1);
+  else
+    System.out.println(i-2);
+  }
+  }
+       
+A) test
+B) test -1
+C) 0
+D) 1
+E) 2
+
+
+
+Ans- D
+
+
+9) what all gets printed when the folloiwng gets compiled and run ?
+
+public class test {
+ public static void main(String [] args ) {
+	int i=1,j=1;
+	try {
+		i++;
+		j--;
+		if(i/j > 1) 
+		   i++;
+         } catch(ArithmeticException e) {
+		System.out.println(0);
+	 } catch(ArrayIndexOutOfBoundsException e) {
+	       System.out.println(1);
+	 } catch(Exception e) {
+	    System.out.println(2);
+	 }
+	 finally { 
+	 System.out.println(3);
+	 }
+	 System.out.println(4);
+	 }
+	 }
+
+A) 0
+B) 1
+C) 2
+D) 3
+E) 4
+
+
+
+Ans- A,D,E
+
+10)
+
+Assume that class A extends class B, which extends class C. Also all the three 
+classes implement the method test().
+How can a method in a class A invoke the test() method defined in a class C 
+(without creating a new instance of class C). 
+
+A) test();
+B) super.test();
+C) super.super.test();
+D) ::test();
+E) C.test();
+F) it is not possible to invoke test() method defined in C from a method in A.
+
+
+
+
+Ans- F
+
+11)Which of the following returns true 
+
+A) "hello"=="hello";
+B)  "hello".equals("hello");
+C) "john"="john";
+D)  All of these 
+
+
+
+
+Ans- A, B
+
+12)
+which statements regarding the following program are correct ?
+
+class A extends Thread 
+{
+   static protected int i=0;
+   public void run() {
+           for(; i<5;i++) 
+	      System.out.println("Hello ");
+   }
+}
+
+public class TestClass extends A 
+{
+      public void run() {
+              for(;i<5;i++) 
+				  System.out.println("World ");
+      }
+      public static void main(String [] args ) 
+      {
+             Thread t1=new A();
+	     Thread t2 = new TestClass();
+	     t2.start();
+	     t1.start();
+      }
+}
+
+A) It will not compile as run method cannot be overridden
+B) It will print both "Hello" and "World" 5 times each 
+C) compiles fines but prints nothing 
+D) the output will contain either "Hello" or "World" or both
+
+
+
+Ans- D
+
+13)
+
+A
+|
++-----B1,B2
+      |
+      +----C1,C2
+
+   (B1,B2 are the subclasses of A and C1,C2 are subclasses of B1 )
+
+   Assume that method public void m1() { ..... }  is defined in all of these 
+   classes EXCEPT B1 and C1
+
+   Which of the following statements are correct ? 
+
+   A) objectOfC1.m1(); will cause a compilation error
+   B) objectOfC2.m1(); will cause A's m1() to be called
+   C) objectOfC1.m1(); will cause A's m1() to be called 
+   D) objectOfB1.m1(); will cause an exception at runtime
+   E) objectOfB2.m1(); will cause an exception at runtime 
+
+
+
+
+   
+Ans- C
+
+14)
+
+class C1
+{
+     public void m1()
+	{
+	      System.out.println("m1 of C1");
+	}
+}
+
+class C2
+{
+        public C1 m1()
+	{
+	         return new C1() {  public void m1() {  System.out.println(" m1 in anonymous class ");  } };
+	}
+public static void main(String [] args )
+	{
+	    C1 obj1=new C2().m1();
+		obj1.m1();
+	}
+}
+
+
+A) m1 of C1
+B) m1 in anonymous class
+C) Compilation fails
+D) Run time error
+
+
+Ans: B
+
+15) 
+interface I
+{
+         final class C1 // Line A
+         {
+                 static int i=9;; //Line B
+		 }
+}
+
+class C2 implements I
+{
+      public static void main(String [] args)
+	{
+	      System.out.println(I.C1.i); //Line C
+	}
+}
+
+
+A) Compile time error at Line A only
+B) Compile time error at Line B only 
+C) Compile time error at Line C only
+D) Compile time error at Line A,B,C
+E) prints 9
+
+
+
+Ans- E

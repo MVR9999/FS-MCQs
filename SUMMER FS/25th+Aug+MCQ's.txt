@@ -1,0 +1,393 @@
+1)
+What is the output of the following C Code 
+
+#include<stdio.h>
+int main()
+{
+unsigned u = 65536;
+printf("%u",u);
+return 1;
+}
+
+A) Junk Value
+B) Segmentation fault
+C) 65536
+D) 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ans-C
+
+
+
+2) What is the output of the following C Code 
+
+#include<stdio.h>
+int main()
+{
+int x, a=3e1,b=2e2;
+x=a+b;
+printf(" %d ", x);
+return 1;
+}
+
+A) Compilation fails
+B) Garbage Value
+C) Segmentation fault
+D) 230
+E) 6
+F) 5e3
+
+
+
+
+
+Ans- D
+
+3e1=> = 3*10
+2e2=> 2*100
+
+Simple Operation (3*10 + 2*100) = 30+200 = 230 
+
+3) What is the output of the following C Code 
+
+#include<stdio.h>
+int main()
+{
+float a=3e-1,b=2e-2;
+printf(" %g %g ", a,b);
+return 1;
+}
+
+A) Compilation fails
+B) Segmentation fault
+C) 0.3 0.02
+D) -30 -200
+
+
+
+
+
+Ans- C
+
+3e-1 => 3*(10^-1) = 3*0.1 = 0.3 
+2e-2 => 2*(10^-2)=2*0.01 = 0.02  
+
+4) What is the output of the following C Code 
+
+#include<stdio.h>
+int main()
+{
+char name [] = {'H','E','L','L','O','\0'};
+char name1[]= {'H','E','L','L','O','\0'};
+printf(name);"\t";printf(name1);
+return 1;
+}
+
+A) Compilation fails
+B) HELLO     HELLO
+C) HELLOHELLO
+D) None of these
+
+
+
+
+Ans- C
+
+5) 
+what is the value of k after the code gets executed 
+
+#include<stdio.h>
+int main()
+{
+int a=3,m=10,k;
+k=!((a<5)!=(m>3));
+return 1;
+}
+
+A) k=true;
+B) k=1
+C) k=0;
+D) k=-1
+
+
+
+Ans- B
+
+6)
+#include<stdio.h>
+int main()
+{
+printf(" %d ", 1000%5);
+printf(" %d ",1010%10);
+printf(" %d ",11010%15);
+printf(" %d ",0101110%20);
+return 1;
+}
+
+
+A) 0 0 0 0
+B) 200 101 1667
+C)  Compilation fails
+D) Segmentation fault
+E) 0 0 0 12 
+
+
+
+
+Ans- E
+
+The last printf statement is Octal Representation .
+0101110 decimal representation is 33352
+33352%20 gives us 12 
+
+7) What is the output of the following C Code 
+
+#include<stdio.h>
+int main()
+{
+char s1[5]="KMIT";
+char *s2[5]={"NGIT"};
+printf(s1);
+printf(*s2);
+return 1;
+}
+
+A) KMITN
+B) KMITNGIT
+C) KMITJunkValue
+D) KMITNGITJunkValue
+E) Compilation fails
+
+
+
+
+Ans- B
+
+8) output of the following Java Code 
+
+class Base
+{
+	String s="Base";
+	String show() {
+		return s;
+	}
+}
+class Derived extends Base
+{
+	String s="Derived";
+}
+class Test
+{
+  void print(Base b)
+	{
+    System.out.println(b.show());
+	}
+	void print(Derived d)
+	{
+    System.out.println(d.show());
+	}
+	public static void main(String[] args) 
+	{
+			Test t=new Test();
+			Base b = new Derived();
+			t.print(b);
+	}
+}
+
+A) Compilation fails
+B) Run time exception
+C) Prints Derived
+D) Prints Base
+
+
+
+Ans- D
+
+9)Output of the following Java Code 
+
+interface ITest
+{
+	public void setVal();
+}
+class Test
+{
+	private String a;
+	void aMethod() {
+	final String b = "World";
+	ITest it= new ITest() {
+		                 public void setVal() {
+							  a="Hello "+b;
+						 }};
+           it.setVal();
+		   System.out.println(a);
+	}
+	public static void main(String[] args) 
+	{
+			Test t=new Test();
+			t.aMethod();
+	}
+}
+
+A) Compilation fails
+B) Hello
+C) World
+D) Hello World
+
+
+
+
+Ans - D
+
+10)  what is the output of the following Java code 
+
+class Test
+{
+	public static void main(String[] args) 
+	{
+		while(true?true:false)
+		{
+      System.out.println("hello");
+      break;
+		}
+	}
+}
+
+A) prints hello Infinite times
+B) prints hello only once
+C) Compilation fails
+D) None of these
+
+
+
+
+ANs - B
+
+11)
+class ExceptionA extends Exception { public String toString() { return "ExceptionA" ; } }
+class ExceptionB extends ExceptionA { public String toString() { return "ExceptionB" ; } }
+
+class Test
+{
+	void thrower() throws ExceptionA {
+			throw new ExceptionA();
+	}
+	public static void main(String[] args) 
+	{
+				Test t = new Test();
+				try
+				{
+					t.thrower();
+				}
+				catch (ExceptionB e)
+				{ 
+					System.out.println(e);
+				}
+	}
+}
+
+A) Compilation fails
+B) ExceptionA
+C) ExceptionB
+D) Run time Exception
+
+
+
+
+Ans- A
+
+12) If start is called again on a dead thread, which exception is thrown 
+
+A) IllegalThreadStateException
+B) InterruptedException
+C) IllegalMonitorStateException
+D) None of these
+
+
+
+
+
+
+
+Ans- A
+
+13) What is the result of attempting to compile and run the program?
+
+class Test
+{
+	public static void main(String [] args)
+	{
+    int []a1[]=new int[3][3];   //Line A
+    int a2[4]={3,4,5,6};        //Line B
+    int a2[5];                  //Line C
+	}
+}
+
+A) Compilation fails at Line A,Line B,Line C
+B) Compilation fails at Line B,Line C
+C) Compilation fails at Line C only 
+D) Runtime Exception
+E) Compiles fine 
+
+
+
+
+Ans- B
+
+14) Read the following points 
+
+1. Each element must be unique
+2. Duplicate elements must not replace old elements
+3. Elements are not key/value pairs
+4. Accessing an element can be almost as fast as perfoming a similar operation on an array 
+
+Which of the following classes provide the specified features ?
+
+A) LinkedList
+B) TreeMap
+C) HashMap
+D) HashSet
+
+
+
+
+
+Ans- D
+
+15) What is the output of the following Code
+
+class A extends Thread
+{
+  private int i;
+  public void run() { i=1;}
+  public static void main(String [] args) 
+	{
+    A a = new A();
+    a.run();
+    System.out.println(a.i);
+	}
+}
+
+A) Prints Nothing
+B) Prints 1
+C) Compilation fails
+D) Run time exception 
+
+
+
+
+ANs- B
+
